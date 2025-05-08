@@ -15,7 +15,7 @@ interface DocsCardProps {
 }
 
 function DocsCard({ title, description, icon, link, delay }: DocsCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const { playSound } = useAudio();
   
   useEffect(() => {
