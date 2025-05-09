@@ -55,7 +55,7 @@ export function Header() {
 
   const handleLaunchApp = () => {
     playSound('click');
-    router.push('/dex');
+    router.push('');
   };
 
   return (
