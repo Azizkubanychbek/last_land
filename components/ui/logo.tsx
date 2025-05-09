@@ -45,11 +45,32 @@ export function Logo() {
       }}
     >
       <div className="relative w-10 h-10 mr-2">
-        <img
-    src="/public/sounds/1024x1024.png" 
-    alt="Logo"
-    className="w-full h-full"
-  />
+        <div className="absolute inset-0 bg-cyberpunk-cyan rounded opacity-20 animate-glow-pulse"></div>
+        <svg 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="/public/sounds/1024x1024.png"  
+          className="w-full h-full"
+        >
+          <path 
+            d="M12 2L2 7L12 12L22 7L12 2Z" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            className="text-cyberpunk-cyan"
+          />
+          <path 
+            d="M2 17L12 22L22 17" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            className="text-cyberpunk-cyan"
+          />
+          <path 
+            d="M2 12L12 17L22 12" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            className="text-cyberpunk-cyan"
+          />
+        </svg>
       </div>
       <div className="text-xl font-display tracking-wider text-white">
         ARMA<span className="text-cyberpunk-cyan">DEX</span>
