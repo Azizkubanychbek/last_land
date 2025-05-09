@@ -14,7 +14,7 @@ export function Logo() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }}
     >
-      <div className="w-9 h-10 mr-2">
+      <div className="w-8 h-9 mr-2">
         <img
           src="/sounds/1024x1024.png"
           alt="Logo"
