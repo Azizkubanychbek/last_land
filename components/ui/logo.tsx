@@ -47,7 +47,7 @@ export function Logo() {
       <div className="relative w-10 h-10 mr-2">
   <div className="absolute inset-0 bg-cyberpunk-cyan rounded opacity-20 animate-glow-pulse"></div>
   <img
-    src="public/sounds/1024x1024.png"
+    src="sounds/1024x1024.png"
     alt="Logo"
     className="w-full h-full z-10 relative"
   />
