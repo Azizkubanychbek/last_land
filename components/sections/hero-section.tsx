@@ -104,13 +104,16 @@ export function HeroSection() {
           >
             Launch App
           </button>
-          <button 
-            className="border border-white hover:border-cyberpunk-cyan text-white px-6 py-3 rounded-md transition-colors duration-300"
-            onMouseEnter={() => playSound('hover')}
-            onClick={() => playSound('click')}
-          >
-            Read Whitepaper
-          </button>
+          <a 
+  href="https://azs-organization-2.gitbook.io/armadex" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="border border-white hover:border-cyberpunk-cyan text-white px-6 py-3 rounded-md transition-colors duration-300 inline-block text-center"
+  onMouseEnter={() => playSound('hover')}
+  onClick={() => playSound('click')}
+>
+  Read Whitepaper
+</a>
         </div>
         
         {/* Stats highlights */}
