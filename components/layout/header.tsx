@@ -106,34 +106,37 @@ export function Header() {
       </div>
 
       {/* Mobile navigation */}
+      
       <div 
-        className={cn(
-          "fixed inset-0 bg-cyberpunk-black/95 backdrop-blur-lg z-40 transform transition-transform duration-300 md:hidden pt-20",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
+  className={cn(
+    "fixed inset-0 z-40 transform transition-transform duration-300 md:hidden pt-20",
+    mobileMenuOpen
+  ? "translate-x-0 bg-cyberpunk-black/90"
+  : "translate-x-full bg-cyberpunk-black"
+  )}
+>
+  <nav className="flex flex-col items-center space-y-4 p-8">
+    {NAV_LINKS.map((link) => (
+      <a
+        key={link.name}
+        href={link.href}
+        onClick={(e) => {
+          e.preventDefault();
+          handleNavLinkClick(link.href);
+        }}
+        className="w-full text-center py-2 px-4 rounded bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-colors duration-200 text-xl font-medium"
       >
-        <nav className="flex flex-col items-center space-y-4 p-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick(link.href);
-              }}
-              className="w-full text-center py-2 px-4 rounded bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-colors duration-200 text-xl font-medium"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button 
-            className="neon-btn mt-4 w-full"
-            onClick={handleLaunchApp}
-          >
-            Launch App
-          </button>
-        </nav>
-      </div>
+        {link.name}
+      </a>
+    ))}
+    <button 
+      className="neon-btn mt-4 w-full"
+      onClick={handleLaunchApp}
+    >
+      Launch App
+    </button>
+  </nav>
+</div>
     </header>
   );
 }

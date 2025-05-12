@@ -184,13 +184,13 @@ export function DocsSection() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          <DocsCard 
-            title="Technical Docs" 
-            description="Deep dive into ArmaBFT consensus, ArmaCore trading engine, and ArmaEVM architecture."
-            icon={<BookOpen size={32} />}
-            link="#"
-            delay={0}
-          />
+        <DocsCard 
+  title="Technical Docs" 
+  description="Deep dive into ArmaBFT consensus, ArmaCore trading engine, and ArmaEVM architecture."
+  icon={<BookOpen size={32} />}
+  link="https://azs-organization-2.gitbook.io/armadex/arkhitektura-blokcheina-armadex"
+  delay={0}
+/>
           
           <DocsCard 
             title="Trading API" 
@@ -232,6 +232,9 @@ export function DocsSection() {
             delay={5}
           />
         </div>
+        
+        
+        
         
         <div ref={faqRef} className="max-w-3xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-8 text-center">
