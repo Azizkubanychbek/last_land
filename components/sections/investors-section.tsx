@@ -71,7 +71,7 @@ export function InvestorsSection() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbylCbNMhPBjtNYLzr3bJU-IsMpjwAtfi2h1AHZldseC1kt5SwBPIzhc3TSkbxymUstg/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbwWnW_GqWTrli7umwzc2H5UeiP01MmU8n-Pe_rHSSz1-PGXtD_Fzs-f1krQIzcZ8kAi/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
