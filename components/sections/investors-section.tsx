@@ -71,13 +71,24 @@ export function InvestorsSection() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbxIpdQCdarXgrezA5eMaxCg3nGbVV0zbXJZBa_pFw0todgSvQu0o9FnYPoe00-Otmk4/exec", {
+      // формируем тело запроса в формате URLSearchParams — как обычная форма
+      const formData = new URLSearchParams();
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      if (data.company) formData.append("company", data.company);
+      formData.append("amount", data.amount);
+      if (data.message) formData.append("message", data.message);
+  
+      const response = await fetch("https://formsubmit.co/ajax/azizbishkekn2@gmail.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          // УБИРАЕМ Content-Type (fetch сам подставит application/x-www-form-urlencoded)
+          "Accept": "application/json"
         },
-        body: JSON.stringify(data)
+        body: formData
       });
+  
+      if (!response.ok) throw new Error('Network response was not ok');
   
       setIsSubmitted(true);
       reset();
