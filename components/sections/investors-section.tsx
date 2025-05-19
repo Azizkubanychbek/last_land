@@ -79,7 +79,7 @@ export function InvestorsSection() {
       formData.append("amount", data.amount);
       if (data.message) formData.append("message", data.message);
   
-      const response = await fetch("https://formsubmit.co/ajax/azizbishkekn2@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/anteykocom@gmail.com", {
         method: "POST",
         headers: {
           // УБИРАЕМ Content-Type (fetch сам подставит application/x-www-form-urlencoded)
