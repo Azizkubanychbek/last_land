@@ -71,15 +71,17 @@ export function InvestorsSection() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', data);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await fetch("https://script.google.com/macros/s/AKfycbylCbNMhPBjtNYLzr3bJU-IsMpjwAtfi2h1AHZldseC1kt5SwBPIzhc3TSkbxymUstg/exec", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+  
       setIsSubmitted(true);
       reset();
-      
+  
       toast({
         title: "Success!",
         description: "Thank you for your interest. Our team will contact you shortly.",
