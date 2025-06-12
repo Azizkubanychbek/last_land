@@ -62,7 +62,7 @@ export function Header() {
 
   const handleLaunchApp = () => {
     playSound('click');
-    router.push('');
+    router.push('/dex');
   };
 
   const handleLogoClick = () => {
@@ -70,6 +70,11 @@ export function Header() {
     if (isPrivacyPage) {
       router.push('/');
     }
+  };
+
+  const toggleMobileMenu = () => {
+    playSound('click');
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -117,13 +122,16 @@ export function Header() {
         {/* Mobile menu button - hide on privacy page */}
         {!isPrivacyPage && (
           <button 
-            className="md:hidden text-white"
-            onClick={() => {
-              playSound('click');
-              setMobileMenuOpen(!mobileMenuOpen);
-            }}
+            className="md:hidden text-white z-50 relative"
+            onClick={toggleMobileMenu}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <div className="w-6 h-6 flex items-center justify-center">
+              {mobileMenuOpen ? (
+                <X size={24} className="transition-transform duration-300" />
+              ) : (
+                <Menu size={24} className="transition-transform duration-300" />
+              )}
+            </div>
           </button>
         )}
 
@@ -143,33 +151,39 @@ export function Header() {
       {!isPrivacyPage && (
         <div 
           className={cn(
-            "fixed inset-0 z-40 transform transition-transform duration-300 md:hidden pt-20",
+            "fixed inset-0 z-40 transform transition-transform duration-300 md:hidden",
             mobileMenuOpen
-              ? "translate-x-0 bg-cyberpunk-black/90"
-              : "translate-x-full bg-cyberpunk-black"
+              ? "translate-x-0"
+              : "translate-x-full"
           )}
         >
-          <nav className="flex flex-col items-center space-y-4 p-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavLinkClick(link.href);
-                }}
-                className="w-full text-center py-2 px-4 rounded bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-colors duration-200 text-xl font-medium"
+          {/* Solid background overlay */}
+          <div className="absolute inset-0 bg-cyberpunk-black"></div>
+          
+          {/* Menu content */}
+          <div className="relative z-10 h-full flex flex-col justify-center">
+            <nav className="flex flex-col items-center space-y-6 p-8">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavLinkClick(link.href);
+                  }}
+                  className="w-full text-center py-3 px-6 rounded-lg bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-all duration-200 text-xl font-medium border border-gray-800 hover:border-cyberpunk-cyan/50"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <button 
+                className="neon-btn mt-6 w-full max-w-xs"
+                onClick={handleLaunchApp}
               >
-                {link.name}
-              </a>
-            ))}
-            <button 
-              className="neon-btn mt-4 w-full"
-              onClick={handleLaunchApp}
-            >
-              Launch App
-            </button>
-          </nav>
+                Launch App
+              </button>
+            </nav>
+          </div>
         </div>
       )}
     </header>
