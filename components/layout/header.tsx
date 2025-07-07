@@ -73,84 +73,26 @@ export function Header() {
   };
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
-      isScrolled 
-        ? "bg-cyberpunk-black/90 backdrop-blur-md shadow-md" 
-        : "bg-transparent"
-    )}>
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo - clickable on privacy page */}
-        <div 
-          className={isPrivacyPage ? "cursor-pointer" : ""}
-          onClick={isPrivacyPage ? handleLogoClick : undefined}
-          onMouseEnter={isPrivacyPage ? () => playSound('hover') : undefined}
-        >
-          <Logo />
-        </div>
-
-        {/* Desktop navigation - hide nav links on privacy page */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {!isPrivacyPage && NAV_LINKS.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick(link.href);
-              }}
-              className="text-white hover:text-cyberpunk-cyan transition-colors duration-200 font-medium"
-              onMouseEnter={() => playSound('hover')}
-            >
-              {link.name}
-            </a>
-          ))}
-          <button 
-            className="neon-btn text-sm py-2"
-            onMouseEnter={() => playSound('hover')}
-            onClick={handleLaunchApp}
+    <>
+      <header className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
+        isScrolled 
+          ? "bg-cyberpunk-black/90 backdrop-blur-md shadow-md" 
+          : "bg-transparent"
+      )}>
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          {/* Logo - clickable on privacy page */}
+          <div 
+            className={isPrivacyPage ? "cursor-pointer" : ""}
+            onClick={isPrivacyPage ? handleLogoClick : undefined}
+            onMouseEnter={isPrivacyPage ? () => playSound('hover') : undefined}
           >
-            Launch App
-          </button>
-        </nav>
+            <Logo />
+          </div>
 
-        {/* Mobile menu button - hide on privacy page */}
-        {!isPrivacyPage && (
-          <button 
-            className="md:hidden text-white"
-            onClick={() => {
-              playSound('click');
-              setMobileMenuOpen(!mobileMenuOpen);
-            }}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        )}
-
-        {/* Mobile Launch App button for privacy page */}
-        {isPrivacyPage && (
-          <button 
-            className="md:hidden neon-btn text-sm py-2"
-            onMouseEnter={() => playSound('hover')}
-            onClick={handleLaunchApp}
-          >
-            Launch App
-          </button>
-        )}
-      </div>
-
-      {/* Mobile navigation - hide on privacy page */}
-      {!isPrivacyPage && (
-        <div 
-          className={cn(
-            "fixed inset-0 z-40 transform transition-transform duration-300 md:hidden pt-20",
-            mobileMenuOpen
-              ? "translate-x-0 bg-cyberpunk-black/90"
-              : "translate-x-full bg-cyberpunk-black"
-          )}
-        >
-          <nav className="flex flex-col items-center space-y-4 p-8">
-            {NAV_LINKS.map((link) => (
+          {/* Desktop navigation - hide nav links on privacy page */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {!isPrivacyPage && NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -158,20 +100,82 @@ export function Header() {
                   e.preventDefault();
                   handleNavLinkClick(link.href);
                 }}
-                className="w-full text-center py-2 px-4 rounded bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-colors duration-200 text-xl font-medium"
+                className="text-white hover:text-cyberpunk-cyan transition-colors duration-200 font-medium"
+                onMouseEnter={() => playSound('hover')}
               >
                 {link.name}
               </a>
             ))}
             <button 
-              className="neon-btn mt-4 w-full"
+              className="neon-btn text-sm py-2"
+              onMouseEnter={() => playSound('hover')}
               onClick={handleLaunchApp}
             >
               Launch App
             </button>
           </nav>
+
+          {/* Mobile menu button - hide on privacy page */}
+          {!isPrivacyPage && (
+            <button 
+              className="md:hidden text-white z-[60] relative"
+              onClick={() => {
+                playSound('click');
+                setMobileMenuOpen(!mobileMenuOpen);
+              }}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          )}
+
+          {/* Mobile Launch App button for privacy page */}
+          {isPrivacyPage && (
+            <button 
+              className="md:hidden neon-btn text-sm py-2"
+              onMouseEnter={() => playSound('hover')}
+              onClick={handleLaunchApp}
+            >
+              Launch App
+            </button>
+          )}
+        </div>
+      </header>
+
+      {/* Mobile navigation - separate from header to avoid transparency inheritance */}
+      {!isPrivacyPage && (
+        <div 
+          className={cn(
+            "fixed inset-0 z-40 transform transition-transform duration-300 md:hidden bg-cyberpunk-black",
+            mobileMenuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+          )}
+        >
+          <div className="pt-20">
+            <nav className="flex flex-col items-center space-y-4 p-8">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavLinkClick(link.href);
+                  }}
+                  className="w-full text-center py-2 px-4 rounded bg-cyberpunk-darker/80 text-white hover:text-cyberpunk-cyan hover:bg-cyberpunk-darker transition-colors duration-200 text-xl font-medium"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <button 
+                className="neon-btn mt-4 w-full"
+                onClick={handleLaunchApp}
+              >
+                Launch App
+              </button>
+            </nav>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
