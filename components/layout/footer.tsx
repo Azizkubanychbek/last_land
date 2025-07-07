@@ -14,7 +14,7 @@ export function Footer() {
   </p>
   <div className="flex space-x-4 mt-6">
     {/* Discord */}
-    <a href="https://discord.gg/AdR3DmMA" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors" aria-label="Discord">
+    <a href="https://discord.gg/9b6x22EVCC" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors" aria-label="Discord">
       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.07.07 0 00-.073.035c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.486 0 12.04 12.04 0 00-.617-1.25.07.07 0 00-.072-.035c-1.67.27-3.288.762-4.884 1.515a.065.065 0 00-.03.027C.533 9.045-.32 13.579.099 18.057a.082.082 0 00.031.055 19.978 19.978 0 006.073 3.078.07.07 0 00.076-.027c.469-.646.885-1.33 1.245-2.05a.07.07 0 00-.038-.093 12.95 12.95 0 01-1.852-.902.07.07 0 01-.007-.117c.124-.093.248-.186.367-.281a.07.07 0 01.071-.01c3.927 1.793 8.18 1.793 12.061 0a.07.07 0 01.072.009c.12.095.243.188.368.282a.07.07 0 01-.006.117c-.595.356-1.215.67-1.853.902a.07.07 0 00-.037.094c.36.72.776 1.404 1.245 2.05a.07.07 0 00.075.028 19.888 19.888 0 006.074-3.078.082.082 0 00.031-.054c.5-5.177-.838-9.673-3.548-13.662a.06.06 0 00-.03-.028zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.093 2.157 2.419 0 1.333-.955 2.418-2.157 2.418zm7.974 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.418 2.157-2.418 1.21 0 2.175 1.093 2.157 2.419 0 1.333-.948 2.418-2.157 2.418z" />
       </svg>
@@ -46,33 +46,32 @@ export function Footer() {
           <div className="col-span-1">
             <h3 className="text-white font-display text-lg mb-4">Products</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Exchange</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Liquidity</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Farming</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Staking</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Bridge</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex#project-overview" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Exchange</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex/stealth-liquidity-layer-sll" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Liquidity</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex/fees-and-tier-model" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Staking</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex/architecture/internal-bridge-cross-chain" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Bridge</a></li>
             </ul>
           </div>
           
           <div className="col-span-1">
             <h3 className="text-white font-display text-lg mb-4">Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Whitepaper</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">API</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Tutorials</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Status</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Documentation</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Whitepaper</a></li>
+              <li><a href="https://armadex-v1.gitbook.io/armadex/addition/enhancements-and-technical-annex/developer-vault-deployment-armaevm#api-and-developer-infrastructure-comparison" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">API</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Tutorials</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Status</a></li>
             </ul>
           </div>
           
           <div className="col-span-1">
             <h3 className="text-white font-display text-lg mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">About</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Press</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Contact</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">About</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Careers</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Blog</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Press</a></li>
+              <li><a href="/soon" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors">Contact</a></li>
             </ul>
           </div>  
         </div>
@@ -83,8 +82,7 @@ export function Footer() {
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="/privacy-policy" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors text-sm">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors text-sm">Legal</a>
+            <a href="/terms-of-service" className="text-gray-400 hover:text-cyberpunk-cyan transition-colors text-sm">Terms of Service</a>
           </div>
         </div>
       </div>
