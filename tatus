@@ -1,0 +1,9 @@
+[33mcommit 9d7c103221ce0940b4e5ee66adc30bba5686cb4a[m
+Merge: 8f8338d b75c248
+Author:     Aziz <azizbishkekn2@gmail.com>
+AuthorDate: Mon Jul 7 16:26:50 2025 +0600
+Commit:     Aziz <azizbishkekn2@gmail.com>
+CommitDate: Mon Jul 7 16:26:50 2025 +0600
+
+    fix: resolve merge conflict for Discord link
+

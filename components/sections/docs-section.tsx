@@ -58,11 +58,7 @@ function DocsCard({ title, description, icon, link, delay }: DocsCardProps) {
       </div>
       
       <h3 className="text-xl font-display text-white mb-3 group-hover:text-cyberpunk-cyan transition-colors duration-300">{title}</h3>
-      <p className="text-gray-400 mb-6">{description}</p>
-      
-      <div className="mt-auto text-sm font-medium text-cyberpunk-cyan group-hover:text-cyberpunk-cyan-light transition-colors duration-300">
-        Learn More →
-      </div>
+      <p className="text-gray-400">{description}</p>
     </a>
   );
 }
